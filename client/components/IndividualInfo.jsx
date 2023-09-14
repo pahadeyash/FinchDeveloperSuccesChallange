@@ -2,8 +2,6 @@ import React from 'react';
 
 // Sample companyInfo component (you can replace this with your actual component)
 const IndividualInfo = ({ individualData }) => {
-  console.log("Individual Data" + JSON.stringify(individualData));
-
   const residenceData = () => {
     const residence = individualData.residence || {};
     return [individualData.residence.line1,individualData.residence.line2,individualData.residence.city,individualData.residence.state,individualData.residence.postal_code,individualData.residence.country].filter(Boolean).join(', ');

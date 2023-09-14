@@ -2,7 +2,6 @@ import React from 'react';
 
 // Sample companyInfo component (you can replace this with your actual component)
 const CompanyInfo = ({ companyData }) => {
-  console.log("Company Data" + JSON.stringify(companyData));
   return (
     <div>
       <h1>Company Information</h1>

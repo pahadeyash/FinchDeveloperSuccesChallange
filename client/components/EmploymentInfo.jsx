@@ -1,7 +1,6 @@
 import React from 'react';
 
 const EmploymentInfo = ({ employmentData }) => {
-  console.log("Employment Data" + JSON.stringify(employmentData));
   const locationData = () => {
     const location = employmentData.location || {};
     return [location.line1,location.line2,location.city,location.state,location.postal_code,location.country].filter(Boolean).join(', ');
