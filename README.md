@@ -14,9 +14,9 @@ If you don't have Node.js installed, you can download it from the official websi
 2. Download the LTS (Long Term Support) version for your operating system (e.g., Windows, macOS, or Linux).
 3. Follow the installation instructions for your platform.
 
-### Updating Node.js (if needed)
+### Updating npm (if needed)
 
-To update Node.js to the latest version, you can use the `npm` package manager:
+To update  to the latest version, you can use the `npm` package manager itself:
 
 1. Open your terminal or command prompt.
 2. Run the following command to update `npm` to the latest version:
@@ -31,7 +31,7 @@ Follow these steps to run the Finch Developer Success Challenge project on your 
 1. Clone the GitHub repository:
    
  ```
- git clone https://github.com/pahadeyash/FinchDeveloperSuccesChallenge.git`
+ git clone https://github.com/pahadeyash/FinchDeveloperSuccesChallenge.git
  ```
 3. Navigate to the client folder:
 
