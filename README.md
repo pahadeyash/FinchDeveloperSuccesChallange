@@ -31,12 +31,12 @@ Follow these steps to run the Finch Developer Success Challenge project on your 
 1. Clone the GitHub repository:
    
  ```
- git clone https://github.com/pahadeyash/FinchDeveloperSuccesChallange.git`
+ git clone https://github.com/pahadeyash/FinchDeveloperSuccesChallenge.git`
  ```
 3. Navigate to the client folder:
 
  ```
- cd FinchDeveloperSuccesChallange/client
+ cd FinchDeveloperSuccesChallenge/client
  ```
 
 4. Install client-side dependencies:
