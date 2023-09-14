@@ -29,35 +29,46 @@ This command will update npm globally on your system.
 Follow these steps to run the Finch Developer Success Challenge project on your local machine:
 
 1. Clone the GitHub repository:
-
-`git clone https://github.com/pahadeyash/FinchDeveloperSuccesChallange.git`
-
+   
+ ```
+ git clone https://github.com/pahadeyash/FinchDeveloperSuccesChallange.git`
+ ```
 3. Navigate to the client folder:
 
-`cd FinchDeveloperSuccesChallange/client`
+ ```
+ cd FinchDeveloperSuccesChallange/client
+ ```
 
 4. Install client-side dependencies:
-
-`npm install`
+ ```
+ npm install
+ ```
 
 5. Run the client application:
 
-`npm run dev`
-This command will start the client-side application on http://localhost:5173.
+```
+npm run dev
+```
 
 6. Open a new terminal window/tab.
 
 7. Navigate to the server folder:
-
-`cd ../server`
+   
+```
+cd ../server
+```
 
 8. Install server-side dependencies:
 
-`npm install`
+```
+npm install
+```
 
 9. Start the server:
 
-`npm run server`
+```
+npm run server
+```
 This command will start the server on http://localhost:8000.
 
 You should now be able to access the Finch Developer Success Challenge application in your web browser at http://localhost:5173.
