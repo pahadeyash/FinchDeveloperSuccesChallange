@@ -2,6 +2,12 @@ import React from 'react';
 
 // Sample companyInfo component (you can replace this with your actual component)
 const IndividualInfo = ({ individualData }) => {
+  console.log("Individual Data" + JSON.stringify(individualData));
+
+  const residenceData = () => {
+    const residence = individualData.residence || {};
+    return [individualData.residence.line1,individualData.residence.line2,individualData.residence.city,individualData.residence.state,individualData.residence.postal_code,individualData.residence.country].filter(Boolean).join(', ');
+  }
   return (
     <div>
       <h1> Employee Information</h1>
@@ -24,7 +30,7 @@ const IndividualInfo = ({ individualData }) => {
           <b> &emsp; Phone Numbers:</b>
           <ul>
             {individualData.phone_numbers.map((number, index) => (
-              <li key={index}> <b>{number.type}</b>: {number.data} </li>
+              <li key={index}> <b>{ number.type && (number.type + ':')}</b> {number.data} </li>
             ))}
           </ul>
         </div>
@@ -33,13 +39,11 @@ const IndividualInfo = ({ individualData }) => {
       {individualData.ethnicity && <p> &emsp; <b>Ethnicity: </b> {individualData.ethnicity} </p>}
       {individualData.dob && <p> &emsp; <b>Date of Birth: </b> {individualData.dob} </p>}
       {individualData.ssn && <p> &emsp; <b>SSN: </b> {individualData.ssn} </p>}
-      {individualData.residence && 
+      {residenceData() && ( 
       <div>
-        <p> &emsp; <b>Residence: </b>  
-        {individualData.residence.line1}, {individualData.residence.line2}, {individualData.residence.city}, {individualData.residence.state}, {individualData.residence.postal_code}, {individualData.residence.country}  
-        </p>
-      </div>}
-
+        <p> &emsp; <b>Residence: </b> {residenceData()} </p>  
+      </div>
+      )}
     </div>
   );
 };

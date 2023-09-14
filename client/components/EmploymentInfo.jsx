@@ -1,25 +1,30 @@
 import React from 'react';
 
 const EmploymentInfo = ({ employmentData }) => {
+  console.log("Employment Data" + JSON.stringify(employmentData));
+  const locationData = () => {
+    const location = employmentData.location || {};
+    return [location.line1,location.line2,location.city,location.state,location.postal_code,location.country].filter(Boolean).join(', ');
+  }
+
   return (
     <div>
       {employmentData.title && <p>&emsp;<b>Title:</b> {employmentData.title}</p>}
       {employmentData.department && <p>&emsp;<b>Department:</b> {employmentData.department.name}</p>}
-      {employmentData.employment && (
+      {employmentData.employment?.type && (
         <div>
           <p>&emsp;<b>Employment</b></p>
           <p>&emsp; &emsp;<b>Type:</b> {employmentData.employment.type}</p>
-          <p>&emsp; &emsp;<b> Subtype:</b> {employmentData.employment.subtype}</p>
+          {employmentData.employment.subtype && <p>&emsp; &emsp;<b> Subtype:</b> {employmentData.employment.subtype}</p>}
         </div>
       )}
       {employmentData.start_date && <p>&emsp;<b>Start Date:</b> {employmentData.start_date}</p>}
       {employmentData.end_date && <p>&emsp;<b>End Date:</b> {employmentData.end_date || 'N/A'}</p>}
       <p>&emsp;<b>Is Active:</b> {employmentData.is_active ? 'Yes' : 'No'}</p>
-      {employmentData.manager && <p>&emsp;<b>Manager ID:</b> {employmentData.manager.id}</p>}
-      {employmentData.location && (
+      {employmentData.manager?.id && <p>&emsp;<b>Manager ID:</b> {employmentData.manager.id}</p>}
+      {locationData() && (
         <div>
-          <p>&emsp;<b>Location:</b></p>
-          <p>&emsp;&emsp;{employmentData.location.line1}, {employmentData.location.line2 || 'N/A'},{employmentData.location.city}, {employmentData.location.state} , {employmentData.location.country}, {employmentData.location.postal_code}</p>
+          <p>&emsp;<b>Location:</b> {locationData()}</p>
         </div>
       )}
       {employmentData.income && (

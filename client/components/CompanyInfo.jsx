@@ -2,6 +2,7 @@ import React from 'react';
 
 // Sample companyInfo component (you can replace this with your actual component)
 const CompanyInfo = ({ companyData }) => {
+  console.log("Company Data" + JSON.stringify(companyData));
   return (
     <div>
       <h1>Company Information</h1>
@@ -10,7 +11,7 @@ const CompanyInfo = ({ companyData }) => {
       {companyData.ein && <p> &emsp; <b>EIN:</b> {companyData.ein}</p>}
       {companyData.primary_email && <p> &emsp; <b>Primary Email:</b> {companyData.primary_email}</p>}
       {companyData.primary_phone_number&& <p> &emsp; <b>Primary Phone Number:</b> {companyData.primary_phone_number}</p>}
-      { companyData.entity && (
+      {companyData?.entity?.type && companyData?.entity?.subtype && (
         <div>
           <b> &emsp; Entity Information</b>
           {companyData.entity.type && <p> &emsp;  &emsp; <b>Type:</b> {companyData.entity.type}</p>}
@@ -40,7 +41,7 @@ const CompanyInfo = ({ companyData }) => {
         <ul>
           {companyData.locations.map((location, index) => (
             <li key={index}>
-              {location.line1}, {location.line2}, {location.city}, {location.state}, {location.postal_code}, {location.country}
+              {[location.line1,location.line2,location.city,location.state,location.postal_code,location.country].filter(Boolean).join(', ')}
             </li>
           ))}
         </ul>
@@ -53,11 +54,11 @@ const CompanyInfo = ({ companyData }) => {
           <ul>
             {companyData.accounts.map((account, index) => (
               <li key={index}>
-                Institution Name: {account.institution_name}<br />
-                Account Name: {account.account_name}<br />
-                Account Number: {account.account_number}<br />
-                Account Type: {account.account_type}<br />
-                Routing Number: {account.routing_number}
+                Institution Name: {account.institution_name || 'N/A' }<br />
+                Account Name: {account.account_name || 'N/A'} <br />
+                Account Number: {account.account_number || 'N/A'}<br />
+                Account Type: {account.account_type || 'N/A'}<br />
+                Routing Number: {account.routing_number || 'N/A'}
               </li>
             ))}
           </ul>
